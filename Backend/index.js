@@ -8,7 +8,10 @@ connectToMongo();
 //above two lines are used to connect with mongodb
 app.use(
   cors({
-    origin: "*",
+    origin: [
+      "https://master--take-note-today.netlify.app/",
+      "https://www.master--take-note-today.netlify.app/",
+    ],
   })
 );
 // from express.js google

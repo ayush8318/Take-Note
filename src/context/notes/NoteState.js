@@ -32,12 +32,10 @@ const NoteState = (props) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        //auth token from addnote collection from thunder client
         "auth-token": localStorage.getItem("token"),
       },
     });
     const json = await response.json();
-    // console.log(json)
     setNotes(json);
   };
   //   const json= response.json();

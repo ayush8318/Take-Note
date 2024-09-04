@@ -21,7 +21,7 @@ const NoteState = (props) => {
   //         {props.children}
   //     </NoteContext.Provider>
   // )
-  const host = "https://take-note-zqoe.onrender.com/";
+  const host = "https://take-note-zqoe.onrender.com";
   const initialnotes = [];
   const [notes, setNotes] = useState(initialnotes);
   //get all  all Notes

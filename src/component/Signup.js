@@ -12,7 +12,7 @@ const Signup = (props) => {
     e.preventDefault();
     const { name, email, password } = credentials;
     const response = await fetch(
-      "https://take-note-zqoe.onrender.com//api/auth/createuser",
+      "https://take-note-zqoe.onrender.com/api/auth/createuser",
       {
         method: "POST",
         headers: {

@@ -12,6 +12,7 @@ app.use(
       "https://master--take-note-today.netlify.app/",
       "https://www.master--take-note-today.netlify.app/",
     ],
+    methods: ["GET", "POST", "DELETE", "UPDATE"],
   })
 );
 // from express.js google

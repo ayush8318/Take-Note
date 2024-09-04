@@ -7,14 +7,12 @@ const app = express();
 connectToMongo(); // Connect to MongoDB
 
 // Configure CORS
+
 app.use(
   cors({
-    origin: [
-      "https://master--take-note-today.netlify.app",
-      "https://www.master--take-note-today.netlify.app"
-    ],
+    origin: "https://master--take-note-today.netlify.app",
     methods: ["GET", "POST", "DELETE", "UPDATE"],
-    allowedHeaders: ["Content-Type", "Authorization"]
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 

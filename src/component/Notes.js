@@ -16,8 +16,8 @@ const Notes = (props) => {
   {  navigate ("/login");}
 
     //  eslint-disable-next-line
-    
   },[])
+
   const[note,Setnote]=useState({id:"",etitle:"",edescription:"",etag:""})
   const ref=useRef(null);
   const refclose=useRef(null);

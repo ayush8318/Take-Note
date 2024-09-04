@@ -1,34 +1,35 @@
 const connectToMongo = require("./db");
 
-var cors = require("cors");
+const cors = require("cors");
 const express = require("express");
 const app = express();
 
-connectToMongo();
-//above two lines are used to connect with mongodb
+connectToMongo(); // Connect to MongoDB
+
+// Configure CORS
 app.use(
   cors({
     origin: [
-      "https://master--take-note-today.netlify.app/",
-      "https://www.master--take-note-today.netlify.app/",
+      "https://master--take-note-today.netlify.app",
+      "https://www.master--take-note-today.netlify.app"
     ],
     methods: ["GET", "POST", "DELETE", "UPDATE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
   })
 );
-// from express.js google
-const port = 5000;
 
+// Middleware
+app.use(express.json()); // To use req.body
+
+// Routes
 app.get("/", (req, res) => {
   res.send("Hello world ayush");
 });
 
-// Available routes
-
-app.use(cors());
-app.use(express.json()); //with the help of this line we are able to use req.body
-
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/notes", require("./routes/notes"));
+
+const port = 5000;
 app.listen(port, () => {
-  console.log(`iNotebook backened listening on port ${port}`);
+  console.log(`iNotebook backend listening on port ${port}`);
 });

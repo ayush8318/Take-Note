@@ -10,12 +10,19 @@ connectToMongo(); // Connect to MongoDB
 
 app.use(
   cors({
+    // origin: [
+    //   "https://master--take-note-today.netlify.app",
+    //   "https://www.master--take-note-today.netlify.app",
+    // ],
     origin: [
       "https://master--take-note-today.netlify.app",
       "https://www.master--take-note-today.netlify.app",
+      "https://take-note-today.netlify.app"
     ],
-    methods: ["GET", "POST", "DELETE", "UPDATE"],
+    methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: ["Content-Type", "Authorization", "auth-token"],
+    credentials: true
+
   })
 );
 

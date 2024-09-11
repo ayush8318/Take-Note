@@ -22,7 +22,6 @@ app.use(
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: ["Content-Type", "Authorization", "auth-token"],
     credentials: true
-
   })
 );
 
